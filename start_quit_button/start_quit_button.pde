@@ -6,46 +6,25 @@ color quitButtonColour, Red=#900404, Green=#03FF65;
 //
 void setup()
 {
-  //Display & ALgorithms not considered yet
   size (400, 300); //Landscape
   //fullScreen(); //displayWidth, displayHeight
+  displayOrientation();
   appWidth = width; 
   appHeight = height;
-  //
-  //Population
-  float centerX = appWidth * 1/2; //Point
-  float centerY = appHeight * 1/2; //Point
-  quitButtonX = centerX - ( appWidth * 1/4 );
-  quitButtonY = centerY - ( appHeight * 1/4 );
-  quitButtonWidth = appWidth * 1/2; //Line not point, thus use formula
-  quitButtonHeight = appHeight * 1/2; //Line not point, thus use formula
+  Population();
 } //End setup
 //
 void draw()
 {
   if ( noNowReallyStart==true ) { //Actual start IF
-    background(0); //Night Mode not considered yet
-    //
-    //Logical Rectangle
-    println("X-Value", quitButtonX, mouseX, quitButtonX+quitButtonWidth );
-    println("Y-Value", quitButtonY, mouseY, quitButtonY+quitButtonHeight);
-    //
-    //Quit Button Hover Over Feature
-    if (  ) {
-      quitButtonColour = Red; //Remember Knight Mode
-    } else {
-      quitButtonColour = Green; //Remember Day Mode
-    } //End Hover Over
-    //
-    fill(quitButtonColour);
-    rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight ); //Quit Button
+    programDraw();
   } //End IF-STart
-  //
 } //End draw
 //
 void keyPressed()
 {
   //
+  //User Initiate Start Screen
   if ( key==' ' && start==true ) noNowReallyStart = true;
   //
   //Prototype Key Board Quit Button OR shortcut
